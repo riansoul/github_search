@@ -101,8 +101,33 @@
 				9847593E035B1815A808A668 /* Pods-github_searchTests.debug.xcconfig */,
 				DB19B6578BDD29BD59A99FE6 /* Pods-github_searchTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A96CB3E127D4EB41007DDDBB /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				A9BD98E727D4DF4D0026E78B /* AppDelegate.swift */,
+				A9BD98E927D4DF4D0026E78B /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		A96CB3E227D4EB4F007DDDBB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A9BD98EB27D4DF4D0026E78B /* ViewController.swift */,
+				A9BD98ED27D4DF4D0026E78B /* Main.storyboard */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A96CB3E327D4EB57007DDDBB /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				A9BD98F027D4DF4E0026E78B /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		A9BD98DB27D4DF4D0026E78B = {
@@ -130,11 +155,9 @@
 		A9BD98E627D4DF4D0026E78B /* github_search */ = {
 			isa = PBXGroup;
 			children = (
-				A9BD98E727D4DF4D0026E78B /* AppDelegate.swift */,
-				A9BD98E927D4DF4D0026E78B /* SceneDelegate.swift */,
-				A9BD98EB27D4DF4D0026E78B /* ViewController.swift */,
-				A9BD98ED27D4DF4D0026E78B /* Main.storyboard */,
-				A9BD98F027D4DF4E0026E78B /* Assets.xcassets */,
+				A96CB3E127D4EB41007DDDBB /* Delegate */,
+				A96CB3E227D4EB4F007DDDBB /* ViewController */,
+				A96CB3E327D4EB57007DDDBB /* Assets */,
 				A9BD98F227D4DF4E0026E78B /* LaunchScreen.storyboard */,
 				A9BD98F527D4DF4E0026E78B /* Info.plist */,
 			);
