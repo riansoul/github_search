@@ -1,0 +1,75 @@
+PODS:
+  - Alamofire (4.9.1)
+  - AlamofireImage (3.6.0):
+    - Alamofire (~> 4.9)
+  - ObjectMapper (4.2.0)
+  - RxAlamofire (4.4.1):
+    - RxAlamofire/Core (= 4.4.1)
+  - RxAlamofire/Core (4.4.1):
+    - Alamofire (~> 4.8)
+    - RxSwift (~> 4.5)
+  - RxAppState (1.1.2):
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxCocoa (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxGesture (2.2.0):
+    - RxCocoa (~> 4.5)
+    - RxSwift (~> 4.5)
+  - RxSwift (4.5.0)
+  - RxSwiftExt (3.4.0):
+    - RxSwiftExt/Core (= 3.4.0)
+    - RxSwiftExt/RxCocoa (= 3.4.0)
+  - RxSwiftExt/Core (3.4.0):
+    - RxSwift (~> 4.0)
+  - RxSwiftExt/RxCocoa (3.4.0):
+    - RxCocoa (~> 4.0)
+    - RxSwiftExt/Core
+  - SDWebImage (5.12.3):
+    - SDWebImage/Core (= 5.12.3)
+  - SDWebImage/Core (5.12.3)
+  - SwiftSoup (2.3.8)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireImage
+  - ObjectMapper
+  - RxAlamofire
+  - RxAppState (~> 1.1.2)
+  - RxCocoa
+  - RxGesture
+  - RxSwift
+  - RxSwiftExt
+  - SDWebImage (~> 5.0)
+  - SwiftSoup
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireImage
+    - ObjectMapper
+    - RxAlamofire
+    - RxAppState
+    - RxCocoa
+    - RxGesture
+    - RxSwift
+    - RxSwiftExt
+    - SDWebImage
+    - SwiftSoup
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
+  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  RxAlamofire: ed65f451f5a9a59419b0b9e705043dc01410edd9
+  RxAppState: 0238d65c304725fa815a4b3758be210d48f4db82
+  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
+  RxGesture: c1b7bf17166b0ef9d642a9510f8bac5785f18990
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  RxSwiftExt: 01f8ecbeeb355698e9c75365ebe908b00dacf45d
+  SDWebImage: 53179a2dba77246efa8a9b85f5c5b21f8f43e38f
+  SwiftSoup: ba8ea2c91151881a298cba4b0628ef31e835a77f
+
+PODFILE CHECKSUM: 69d0dc2f2e47df0b6b16f050924134b361b9feae
+
+COCOAPODS: 1.11.2
