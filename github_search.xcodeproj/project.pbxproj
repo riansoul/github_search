@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		048B53C2AF208DC973B31CC7 /* Pods_github_searchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC018F6972E1CEE0E7F4A822 /* Pods_github_searchTests.framework */; };
 		66BEF9F464A70CABCFBA336C /* Pods_github_search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4284D1BCC12BAD9A66EF3C4D /* Pods_github_search.framework */; };
+		A91144A327D62EB10051B7EC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91144A227D62EB10051B7EC /* UIColor+Extension.swift */; };
 		A96CB3E827D4EFA0007DDDBB /* RxSwift+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CB3E727D4EFA0007DDDBB /* RxSwift+Extension.swift */; };
 		A96CB3EA27D4EFCA007DDDBB /* OptionalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CB3E927D4EFCA007DDDBB /* OptionalType.swift */; };
 		A96CB3EC27D4F002007DDDBB /* ObservableType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CB3EB27D4F002007DDDBB /* ObservableType+Extension.swift */; };
@@ -30,6 +31,8 @@
 		A997EAB627D5EBF100077E48 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997EAB527D5EBF100077E48 /* NetworkError.swift */; };
 		A997EAB927D5EE2500077E48 /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997EAB827D5EE2500077E48 /* GitHubAPI.swift */; };
 		A997EABD27D5FB3B00077E48 /* ListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997EABC27D5FB3B00077E48 /* ListItemCell.swift */; };
+		A997EABF27D6195F00077E48 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997EABE27D6195F00077E48 /* Int+Extension.swift */; };
+		A997EAC127D61A0700077E48 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997EAC027D61A0700077E48 /* Double+Extension.swift */; };
 		A9BD98E827D4DF4D0026E78B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD98E727D4DF4D0026E78B /* AppDelegate.swift */; };
 		A9BD98EA27D4DF4D0026E78B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD98E927D4DF4D0026E78B /* SceneDelegate.swift */; };
 		A9BD98EC27D4DF4D0026E78B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD98EB27D4DF4D0026E78B /* ViewController.swift */; };
@@ -64,6 +67,7 @@
 		2839CB1F7D679396A4845183 /* Pods-github_search-github_searchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github_search-github_searchUITests.debug.xcconfig"; path = "Target Support Files/Pods-github_search-github_searchUITests/Pods-github_search-github_searchUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4284D1BCC12BAD9A66EF3C4D /* Pods_github_search.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_github_search.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9847593E035B1815A808A668 /* Pods-github_searchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github_searchTests.debug.xcconfig"; path = "Target Support Files/Pods-github_searchTests/Pods-github_searchTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A91144A227D62EB10051B7EC /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		A96CB3E727D4EFA0007DDDBB /* RxSwift+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Extension.swift"; sourceTree = "<group>"; };
 		A96CB3E927D4EFCA007DDDBB /* OptionalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalType.swift; sourceTree = "<group>"; };
 		A96CB3EB27D4F002007DDDBB /* ObservableType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extension.swift"; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 		A997EAB527D5EBF100077E48 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		A997EAB827D5EE2500077E48 /* GitHubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPI.swift; sourceTree = "<group>"; };
 		A997EABC27D5FB3B00077E48 /* ListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemCell.swift; sourceTree = "<group>"; };
+		A997EABE27D6195F00077E48 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		A997EAC027D61A0700077E48 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		A9BD98E427D4DF4D0026E78B /* github_search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = github_search.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BD98E727D4DF4D0026E78B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9BD98E927D4DF4D0026E78B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +200,9 @@
 				A997EA9B27D5CDF000077E48 /* UIView+Extension.swift */,
 				A997EA9D27D5CE0700077E48 /* UIWindow+Extension.swift */,
 				A997EA9127D5CD7C00077E48 /* UIStoryboard+Extension.swift */,
+				A997EABE27D6195F00077E48 /* Int+Extension.swift */,
+				A997EAC027D61A0700077E48 /* Double+Extension.swift */,
+				A91144A227D62EB10051B7EC /* UIColor+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -597,9 +606,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A997EABF27D6195F00077E48 /* Int+Extension.swift in Sources */,
 				A997EAA427D5CE9E00077E48 /* NetworkInformation.swift in Sources */,
 				A997EA9827D5CDB800077E48 /* StoryboardSupportProtocol.swift in Sources */,
+				A91144A327D62EB10051B7EC /* UIColor+Extension.swift in Sources */,
 				A997EAB227D5EB9800077E48 /* KurlyAPI.swift in Sources */,
+				A997EAC127D61A0700077E48 /* Double+Extension.swift in Sources */,
 				A997EAB427D5EBBB00077E48 /* NetworkManager.swift in Sources */,
 				A997EA9C27D5CDF000077E48 /* UIView+Extension.swift in Sources */,
 				A997EAAD27D5E88600077E48 /* SearchModel.swift in Sources */,

@@ -43,6 +43,17 @@ extension SearchListViewModel {
         return self.listItems.value[at.row]
     }
     
+    func getColor(language : String) -> UIColor {
+        
+        if let dic = language_color[language] as? NSDictionary {
+            let hexString = dic["color"] as? String ?? "ffffff"
+            return UIColor.init(hexString: hexString)
+        }
+        
+        
+        return UIColor.init(hexString: "000000")
+    }
+    
 }
 
 

@@ -96,9 +96,16 @@ extension SearchListView : UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier:"ListItem", for:indexPath) as! ListItemCell
         cell.titleLabel.text = item.full_name
         cell.descLabel.text = item.description
-        cell.starLabel.text = String(format: "%d", item.stargazers_count ?? 0)
+        cell.starLabel.text = item.stargazers_count?.count()
         cell.languageLabel.text = item.language
-        cell.licenseLabel.text = item.license?.name ?? ""
+        cell.languageImageView.backgroundColor = self.viewModel.getColor(language: item.language ?? "ffffff")
+        
+        
+        let license = item.license?.name ?? ""        
+        cell.licenseLabel.isHidden = license.count == 0 ? true : false
+        cell.licenseView.isHidden = license.count == 0 ? true : false
+        cell.licenseLabel.text = license
+        
         cell.updateDateLabel.text = item.updated_at
         
         

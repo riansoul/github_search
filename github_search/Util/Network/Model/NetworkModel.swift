@@ -116,6 +116,7 @@ struct item: Codable {
     private(set) var privateFlag        : Bool?
     private(set) var description        : String?
     private(set) var updated_at         : String?
+    private(set) var html_url           : String?
     private(set) var stargazers_count   : Int?
     private(set) var language           : String?
     private(set) var topics             : [String]?
@@ -126,7 +127,7 @@ struct item: Codable {
         case name,full_name
         case privateFlag  = "private"
         case description, updated_at
-        case stargazers_count, language
+        case html_url, stargazers_count, language
         case topics, license
     }
     
@@ -139,6 +140,7 @@ struct item: Codable {
         privateFlag         = (try? container.decode(Bool.self, forKey: .privateFlag)) ?? false
         description         = (try? container.decode(String.self, forKey: .description)) ?? ""
         updated_at          = (try? container.decode(String.self, forKey: .updated_at)) ?? ""
+        html_url            = (try? container.decode(String.self, forKey: .html_url)) ?? ""
         stargazers_count    = (try? container.decode(Int.self, forKey: .stargazers_count)) ?? 0
         language            = (try? container.decode(String.self, forKey: .language)) ?? ""
         topics              = (try? container.decode([String].self, forKey: .topics)) ?? []
