@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		048B53C2AF208DC973B31CC7 /* Pods_github_searchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC018F6972E1CEE0E7F4A822 /* Pods_github_searchTests.framework */; };
 		66BEF9F464A70CABCFBA336C /* Pods_github_search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4284D1BCC12BAD9A66EF3C4D /* Pods_github_search.framework */; };
+		A96CB3E827D4EFA0007DDDBB /* RxSwift+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CB3E727D4EFA0007DDDBB /* RxSwift+Extension.swift */; };
+		A96CB3EA27D4EFCA007DDDBB /* OptionalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CB3E927D4EFCA007DDDBB /* OptionalType.swift */; };
+		A96CB3EC27D4F002007DDDBB /* ObservableType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CB3EB27D4F002007DDDBB /* ObservableType+Extension.swift */; };
 		A9BD98E827D4DF4D0026E78B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD98E727D4DF4D0026E78B /* AppDelegate.swift */; };
 		A9BD98EA27D4DF4D0026E78B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD98E927D4DF4D0026E78B /* SceneDelegate.swift */; };
 		A9BD98EC27D4DF4D0026E78B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD98EB27D4DF4D0026E78B /* ViewController.swift */; };
@@ -43,6 +46,9 @@
 		2839CB1F7D679396A4845183 /* Pods-github_search-github_searchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github_search-github_searchUITests.debug.xcconfig"; path = "Target Support Files/Pods-github_search-github_searchUITests/Pods-github_search-github_searchUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4284D1BCC12BAD9A66EF3C4D /* Pods_github_search.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_github_search.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9847593E035B1815A808A668 /* Pods-github_searchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github_searchTests.debug.xcconfig"; path = "Target Support Files/Pods-github_searchTests/Pods-github_searchTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A96CB3E727D4EFA0007DDDBB /* RxSwift+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Extension.swift"; sourceTree = "<group>"; };
+		A96CB3E927D4EFCA007DDDBB /* OptionalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalType.swift; sourceTree = "<group>"; };
+		A96CB3EB27D4F002007DDDBB /* ObservableType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extension.swift"; sourceTree = "<group>"; };
 		A9BD98E427D4DF4D0026E78B /* github_search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = github_search.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BD98E727D4DF4D0026E78B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9BD98E927D4DF4D0026E78B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +136,32 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		A96CB3E427D4EF40007DDDBB /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				A96CB3E527D4EF7E007DDDBB /* Extension */,
+				A96CB3E627D4EF87007DDDBB /* Protocol */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		A96CB3E527D4EF7E007DDDBB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A96CB3E727D4EFA0007DDDBB /* RxSwift+Extension.swift */,
+				A96CB3E927D4EFCA007DDDBB /* OptionalType.swift */,
+				A96CB3EB27D4F002007DDDBB /* ObservableType+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A96CB3E627D4EF87007DDDBB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		A9BD98DB27D4DF4D0026E78B = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				A96CB3E127D4EB41007DDDBB /* Delegate */,
+				A96CB3E427D4EF40007DDDBB /* Util */,
 				A96CB3E227D4EB4F007DDDBB /* ViewController */,
 				A96CB3E327D4EB57007DDDBB /* Assets */,
 				A9BD98F227D4DF4E0026E78B /* LaunchScreen.storyboard */,
@@ -431,7 +464,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9BD98EC27D4DF4D0026E78B /* ViewController.swift in Sources */,
+				A96CB3E827D4EFA0007DDDBB /* RxSwift+Extension.swift in Sources */,
+				A96CB3EA27D4EFCA007DDDBB /* OptionalType.swift in Sources */,
 				A9BD98E827D4DF4D0026E78B /* AppDelegate.swift in Sources */,
+				A96CB3EC27D4F002007DDDBB /* ObservableType+Extension.swift in Sources */,
 				A9BD98EA27D4DF4D0026E78B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -539,7 +575,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -594,7 +630,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
