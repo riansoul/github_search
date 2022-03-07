@@ -22,6 +22,13 @@
 		A997EA9E27D5CE0700077E48 /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997EA9D27D5CE0700077E48 /* UIWindow+Extension.swift */; };
 		A997EAA227D5CE8800077E48 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997EAA127D5CE8800077E48 /* NetworkModel.swift */; };
 		A997EAA427D5CE9E00077E48 /* NetworkInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997EAA327D5CE9E00077E48 /* NetworkInformation.swift */; };
+		A997EAAB27D5E87700077E48 /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997EAAA27D5E87700077E48 /* SearchListView.swift */; };
+		A997EAAD27D5E88600077E48 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997EAAC27D5E88600077E48 /* SearchModel.swift */; };
+		A997EAAF27D5E89200077E48 /* SearchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997EAAE27D5E89200077E48 /* SearchListViewModel.swift */; };
+		A997EAB227D5EB9800077E48 /* KurlyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997EAB127D5EB9800077E48 /* KurlyAPI.swift */; };
+		A997EAB427D5EBBB00077E48 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997EAB327D5EBBB00077E48 /* NetworkManager.swift */; };
+		A997EAB627D5EBF100077E48 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997EAB527D5EBF100077E48 /* NetworkError.swift */; };
+		A997EAB927D5EE2500077E48 /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997EAB827D5EE2500077E48 /* GitHubAPI.swift */; };
 		A9BD98E827D4DF4D0026E78B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD98E727D4DF4D0026E78B /* AppDelegate.swift */; };
 		A9BD98EA27D4DF4D0026E78B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD98E927D4DF4D0026E78B /* SceneDelegate.swift */; };
 		A9BD98EC27D4DF4D0026E78B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD98EB27D4DF4D0026E78B /* ViewController.swift */; };
@@ -69,6 +76,13 @@
 		A997EA9D27D5CE0700077E48 /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
 		A997EAA127D5CE8800077E48 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
 		A997EAA327D5CE9E00077E48 /* NetworkInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInformation.swift; sourceTree = "<group>"; };
+		A997EAAA27D5E87700077E48 /* SearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
+		A997EAAC27D5E88600077E48 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		A997EAAE27D5E89200077E48 /* SearchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListViewModel.swift; sourceTree = "<group>"; };
+		A997EAB127D5EB9800077E48 /* KurlyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KurlyAPI.swift; sourceTree = "<group>"; };
+		A997EAB327D5EBBB00077E48 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		A997EAB527D5EBF100077E48 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		A997EAB827D5EE2500077E48 /* GitHubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPI.swift; sourceTree = "<group>"; };
 		A9BD98E427D4DF4D0026E78B /* github_search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = github_search.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BD98E727D4DF4D0026E78B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9BD98E927D4DF4D0026E78B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,7 +156,8 @@
 		A96CB3E227D4EB4F007DDDBB /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A9BD98EB27D4DF4D0026E78B /* ViewController.swift */,
+				A997EAA827D5E85900077E48 /* Main */,
+				A997EAA927D5E86000077E48 /* Contents */,
 				A9BD98ED27D4DF4D0026E78B /* Main.storyboard */,
 			);
 			path = ViewController;
@@ -194,8 +209,11 @@
 		A997EA9F27D5CE5F00077E48 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				A997EAB027D5EB7300077E48 /* API */,
 				A997EAA027D5CE7600077E48 /* Model */,
+				A997EAB327D5EBBB00077E48 /* NetworkManager.swift */,
 				A997EAA327D5CE9E00077E48 /* NetworkInformation.swift */,
+				A997EAB527D5EBF100077E48 /* NetworkError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -206,6 +224,57 @@
 				A997EAA127D5CE8800077E48 /* NetworkModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A997EAA627D5E7DD00077E48 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A997EAAC27D5E88600077E48 /* SearchModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A997EAA727D5E7E800077E48 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A997EAAE27D5E89200077E48 /* SearchListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A997EAA827D5E85900077E48 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A9BD98EB27D4DF4D0026E78B /* ViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		A997EAA927D5E86000077E48 /* Contents */ = {
+			isa = PBXGroup;
+			children = (
+				A997EAA627D5E7DD00077E48 /* Model */,
+				A997EAA727D5E7E800077E48 /* ViewModel */,
+				A997EAAA27D5E87700077E48 /* SearchListView.swift */,
+			);
+			path = Contents;
+			sourceTree = "<group>";
+		};
+		A997EAB027D5EB7300077E48 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A997EAB727D5EE0E00077E48 /* GitHub */,
+				A997EAB127D5EB9800077E48 /* KurlyAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		A997EAB727D5EE0E00077E48 /* GitHub */ = {
+			isa = PBXGroup;
+			children = (
+				A997EAB827D5EE2500077E48 /* GitHubAPI.swift */,
+			);
+			path = GitHub;
 			sourceTree = "<group>";
 		};
 		A9BD98DB27D4DF4D0026E78B = {
@@ -511,18 +580,25 @@
 			files = (
 				A997EAA427D5CE9E00077E48 /* NetworkInformation.swift in Sources */,
 				A997EA9827D5CDB800077E48 /* StoryboardSupportProtocol.swift in Sources */,
+				A997EAB227D5EB9800077E48 /* KurlyAPI.swift in Sources */,
+				A997EAB427D5EBBB00077E48 /* NetworkManager.swift in Sources */,
 				A997EA9C27D5CDF000077E48 /* UIView+Extension.swift in Sources */,
+				A997EAAD27D5E88600077E48 /* SearchModel.swift in Sources */,
+				A997EAAB27D5E87700077E48 /* SearchListView.swift in Sources */,
 				A9BD98EC27D4DF4D0026E78B /* ViewController.swift in Sources */,
 				A997EAA227D5CE8800077E48 /* NetworkModel.swift in Sources */,
+				A997EAB627D5EBF100077E48 /* NetworkError.swift in Sources */,
 				A997EA9427D5CD9400077E48 /* RxBindProtocol.swift in Sources */,
 				A96CB3E827D4EFA0007DDDBB /* RxSwift+Extension.swift in Sources */,
 				A96CB3EA27D4EFCA007DDDBB /* OptionalType.swift in Sources */,
+				A997EAAF27D5E89200077E48 /* SearchListViewModel.swift in Sources */,
 				A9BD98E827D4DF4D0026E78B /* AppDelegate.swift in Sources */,
 				A997EA9027D5CD5C00077E48 /* UIViewController+Extension.swift in Sources */,
 				A96CB3EC27D4F002007DDDBB /* ObservableType+Extension.swift in Sources */,
 				A997EA9E27D5CE0700077E48 /* UIWindow+Extension.swift in Sources */,
 				A997EA9227D5CD7C00077E48 /* UIStoryboard+Extension.swift in Sources */,
 				A9BD98EA27D4DF4D0026E78B /* SceneDelegate.swift in Sources */,
+				A997EAB927D5EE2500077E48 /* GitHubAPI.swift in Sources */,
 				A997EA9A27D5CDCF00077E48 /* ViewModelTypeProtocol.swift in Sources */,
 				A997EA9627D5CDA600077E48 /* RxScreenSupport.swift in Sources */,
 			);
@@ -706,6 +782,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = github_search/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "컬리(과제)";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -734,6 +811,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = github_search/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "컬리(과제)";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

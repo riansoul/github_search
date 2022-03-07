@@ -2,7 +2,7 @@
 //  NetworkModel.swift
 //  github_search
 //
-//  Created by Geondae Baek on 2022/03/07.
+//  Created by jy choi on 2022/03/07.
 //
 
 import Foundation
