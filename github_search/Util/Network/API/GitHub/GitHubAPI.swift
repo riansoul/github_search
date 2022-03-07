@@ -13,7 +13,7 @@ extension KurlyAPI {
     
     func getSearchListInfo(param:searchParam) -> Observable<Response> {
         
-        let params : [String:Any]? = ["search" :  param.search,
+        let params : [String:Any]? = ["q"      :  param.search,
                                       "page"   :  param.page]
         
         let api = ServerSetting.api

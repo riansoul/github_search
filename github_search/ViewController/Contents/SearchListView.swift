@@ -95,7 +95,7 @@ extension SearchListView : UITableViewDataSource {
 
 // MARK: - UISearchBarDelegate
 extension SearchListView : UISearchBarDelegate {
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.viewModel.getListItemsData(search: searchBar.text ?? "")
     }
 }
