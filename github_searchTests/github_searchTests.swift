@@ -2,7 +2,7 @@
 //  github_searchTests.swift
 //  github_searchTests
 //
-//  Created by Geondae Baek on 2022/03/06.
+//  Created by jy choi on 2022/03/06.
 //
 
 import XCTest
