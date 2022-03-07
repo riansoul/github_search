@@ -50,7 +50,9 @@ extension SearchListViewModel {
 extension SearchListViewModel {
     
     func getListItemsData(search:String) {
+        self.listItems.accept([])
         self.param.search = search
+        self.param.page = 1
         self.getListItemsData()
     }
     
