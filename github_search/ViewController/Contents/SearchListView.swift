@@ -32,7 +32,9 @@ class SearchListView : UIViewController {
     }
     
     func initialize() {
-        self.viewModel = SearchListViewModel.init()
+        self.viewModel = SearchListViewModel.init()        
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 80.0
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,7 +75,9 @@ class SearchListView : UIViewController {
 
 // MARK: - UITableViewDelegate
 extension SearchListView : UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -91,7 +95,9 @@ extension SearchListView : UITableViewDataSource {
 
 // MARK: - UISearchBarDelegate
 extension SearchListView : UISearchBarDelegate {
-
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        self.viewModel.getListItemsData(search: searchBar.text ?? "")
+    }
 }
 
 // MARK: - RxBindProtocol
