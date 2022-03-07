@@ -114,14 +114,20 @@ struct item: Codable {
     private(set) var name               : String?
     private(set) var full_name          : String?
     private(set) var privateFlag        : Bool?
-    
+    private(set) var description        : String?
+    private(set) var updated_at         : String?
+    private(set) var stargazers_count   : Int?
+    private(set) var language           : String?
+    private(set) var topics             : [String]?
+    private(set) var license            : licenseData?
     
     private enum CodingKeys: String, CodingKey {
-        case id
-        case node_id
-        case name
-        case full_name
+        case id, node_id
+        case name,full_name
         case privateFlag  = "private"
+        case description, updated_at
+        case stargazers_count, language
+        case topics, license
     }
     
     init(from decoder: Decoder) throws {
@@ -131,6 +137,12 @@ struct item: Codable {
         name                = (try? container.decode(String.self, forKey: .name)) ?? ""
         full_name           = (try? container.decode(String.self, forKey: .full_name)) ?? ""
         privateFlag         = (try? container.decode(Bool.self, forKey: .privateFlag)) ?? false
+        description         = (try? container.decode(String.self, forKey: .description)) ?? ""
+        updated_at          = (try? container.decode(String.self, forKey: .updated_at)) ?? ""
+        stargazers_count    = (try? container.decode(Int.self, forKey: .stargazers_count)) ?? 0
+        language            = (try? container.decode(String.self, forKey: .language)) ?? ""
+        topics              = (try? container.decode([String].self, forKey: .topics)) ?? []
+        license             = (try? container.decode(licenseData.self, forKey: .license)) ?? nil
     }
 }
 
@@ -181,36 +193,29 @@ struct owner: Codable {
     }
 }
 
-struct license: Codable {
+struct licenseData: Codable {
     
-//    "license": {
-//            "key": "apache-2.0",
-//            "name": "Apache License 2.0",
-//            "spdx_id": "Apache-2.0",
-//            "url": "https://api.github.com/licenses/apache-2.0",
-//            "node_id": "MDc6TGljZW5zZTI="
-//          },
-    private(set) var id                 : Int?
-    private(set) var node_id            : String?
-    private(set) var name               : String?
-    private(set) var full_name          : String?
-    private(set) var privateFlag        : Bool?
+    private(set) var key          : String?
+    private(set) var name         : String?
+    private(set) var spdx_id      : String?
+    private(set) var url          : String?
+    private(set) var node_id      : String?
     
     
     private enum CodingKeys: String, CodingKey {
-        case id
-        case node_id
+        case key
         case name
-        case full_name
-        case privateFlag  = "private"
+        case spdx_id
+        case url
+        case node_id
     }
     
     init(from decoder: Decoder) throws {
-        let container       = try decoder.container(keyedBy: CodingKeys.self)
-        id                  = (try? container.decode(Int.self, forKey: .id)) ?? 0
-        node_id             = (try? container.decode(String.self, forKey: .node_id)) ?? ""
-        name                = (try? container.decode(String.self, forKey: .name)) ?? ""
-        full_name           = (try? container.decode(String.self, forKey: .full_name)) ?? ""
-        privateFlag         = (try? container.decode(Bool.self, forKey: .privateFlag)) ?? false
+        let container   = try decoder.container(keyedBy: CodingKeys.self)
+        key             = (try? container.decode(String.self, forKey: .key)) ?? ""
+        name            = (try? container.decode(String.self, forKey: .name)) ?? ""
+        spdx_id         = (try? container.decode(String.self, forKey: .spdx_id)) ?? ""
+        url             = (try? container.decode(String.self, forKey: .url)) ?? ""
+        node_id         = (try? container.decode(String.self, forKey: .node_id)) ?? ""
     }
 }

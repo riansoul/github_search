@@ -83,11 +83,24 @@ extension SearchListView : UITableViewDelegate {
 // MARK: - UITableViewDataSource
 extension SearchListView : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.viewModel.getTableRowCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier:"ListItem", for:indexPath)
+        guard let item = self.viewModel.getTableData(at: indexPath) else {
+            let cell = UITableViewCell()
+            cell.selectionStyle = .none
+            return cell
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier:"ListItem", for:indexPath) as! ListItemCell
+        cell.titleLabel.text = item.full_name
+        cell.descLabel.text = item.description
+        cell.starLabel.text = String(format: "%d", item.stargazers_count ?? 0)
+        cell.languageLabel.text = item.language
+        cell.licenseLabel.text = item.license?.name ?? ""
+        cell.updateDateLabel.text = item.updated_at
+        
         
         return cell
     }

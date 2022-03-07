@@ -13,9 +13,15 @@ class ListItemCell: UITableViewCell {
     
     @IBOutlet weak var topicsView                : UICollectionView!
     
+    
+    
     @IBOutlet weak var starLabel                 : UILabel!
     @IBOutlet weak var languageLabel             : UILabel!
+    
+    
+    @IBOutlet weak var licenseView               : UIView!
     @IBOutlet weak var licenseLabel              : UILabel!
+    @IBOutlet weak var updateDateView            : UIView!
     @IBOutlet weak var updateDateLabel           : UILabel!
     
     
