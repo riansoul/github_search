@@ -30,6 +30,12 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        let deadlineTime = DispatchTime.now() + 0.5
+        DispatchQueue.main.asyncAfter(deadline: deadlineTime, execute: {
+            let viewController = SearchListView.default
+            viewController.modalPresentationStyle = .overFullScreen
+            self.present(viewController, animated: false, completion: nil)
+        })
     }
     
     override var shouldAutorotate: Bool {

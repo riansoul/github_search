@@ -57,7 +57,7 @@
                                 <rect key="frame" x="0.0" y="95" width="414" height="767"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="250" id="Qez-ub-rMO" customClass="ListItemCell" customModule="github_search" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListItem" rowHeight="250" id="Qez-ub-rMO" customClass="ListItemCell" customModule="github_search" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qez-ub-rMO" id="cgm-vx-nBa">
@@ -84,7 +84,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zBp-LG-pfd">
-                                                    <rect key="frame" x="40" y="65.5" width="370" height="84.5"/>
+                                                    <rect key="frame" x="40" y="65.5" width="370" height="100.5"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OM3-fO-8vI">
                                                         <size key="itemSize" width="60" height="30"/>
@@ -93,7 +93,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="IVI-pE-bd8">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="topicsCell" id="IVI-pE-bd8">
                                                             <rect key="frame" x="0.0" y="0.0" width="45.5" height="28"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HoQ-fS-xho">
@@ -127,9 +127,13 @@
                                                             </collectionViewCellContentView>
                                                         </collectionViewCell>
                                                     </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="Qez-ub-rMO" id="egE-Zp-ACT"/>
+                                                        <outlet property="delegate" destination="Qez-ub-rMO" id="u5y-9S-wLZ"/>
+                                                    </connections>
                                                 </collectionView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dXF-8k-005">
-                                                    <rect key="frame" x="40" y="158" width="338" height="30"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dXF-8k-005" userLabel="Stack View1">
+                                                    <rect key="frame" x="40" y="166" width="338" height="30"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3gB-jr-B6T" userLabel="View1">
                                                             <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
@@ -202,7 +206,7 @@
                                                         <constraint firstItem="JY7-OQ-bii" firstAttribute="top" secondItem="dXF-8k-005" secondAttribute="top" id="the-pi-560"/>
                                                     </constraints>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qcB-EZ-80V">
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qcB-EZ-80V" userLabel="Stack View2">
                                                     <rect key="frame" x="40" y="204" width="358" height="30"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RWa-7P-rfJ" userLabel="View1">
@@ -259,7 +263,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="xGb-CS-E2h" firstAttribute="leading" secondItem="zBp-LG-pfd" secondAttribute="leading" id="3nV-mY-9gE"/>
-                                                <constraint firstItem="dXF-8k-005" firstAttribute="top" secondItem="zBp-LG-pfd" secondAttribute="bottom" constant="8" id="8k9-OG-0H6"/>
+                                                <constraint firstItem="dXF-8k-005" firstAttribute="top" secondItem="zBp-LG-pfd" secondAttribute="bottom" id="8k9-OG-0H6"/>
                                                 <constraint firstItem="Dja-hh-DQq" firstAttribute="top" secondItem="cgm-vx-nBa" secondAttribute="top" constant="16" id="BCn-sI-sAr"/>
                                                 <constraint firstItem="vSF-hM-A8z" firstAttribute="top" secondItem="xGb-CS-E2h" secondAttribute="bottom" constant="8" id="Bep-NG-SDo"/>
                                                 <constraint firstItem="Dja-hh-DQq" firstAttribute="leading" secondItem="cgm-vx-nBa" secondAttribute="leading" constant="16" id="Enb-OL-ASR"/>
@@ -269,7 +273,7 @@
                                                 <constraint firstItem="xGb-CS-E2h" firstAttribute="leading" secondItem="qcB-EZ-80V" secondAttribute="leading" id="Udo-Oo-lfU"/>
                                                 <constraint firstAttribute="trailing" secondItem="qcB-EZ-80V" secondAttribute="trailing" constant="16" id="X2d-Ze-hds"/>
                                                 <constraint firstItem="xGb-CS-E2h" firstAttribute="top" secondItem="cgm-vx-nBa" secondAttribute="top" constant="13" id="dU5-5L-sza"/>
-                                                <constraint firstItem="qcB-EZ-80V" firstAttribute="top" secondItem="dXF-8k-005" secondAttribute="bottom" constant="16" id="e46-yn-DQk"/>
+                                                <constraint firstItem="qcB-EZ-80V" firstAttribute="top" secondItem="dXF-8k-005" secondAttribute="bottom" constant="8" id="e46-yn-DQk"/>
                                                 <constraint firstItem="xGb-CS-E2h" firstAttribute="leading" secondItem="Dja-hh-DQq" secondAttribute="trailing" constant="8" id="eyq-kg-sRt"/>
                                                 <constraint firstItem="xGb-CS-E2h" firstAttribute="leading" secondItem="vSF-hM-A8z" secondAttribute="leading" id="gPR-PM-Isw"/>
                                                 <constraint firstAttribute="bottom" secondItem="qcB-EZ-80V" secondAttribute="bottom" constant="16" id="i0F-uj-mf7"/>
