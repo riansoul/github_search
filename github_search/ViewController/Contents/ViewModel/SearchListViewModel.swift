@@ -10,8 +10,10 @@ import RxCocoa
 import RxSwift
 
 
-class SearchListViewModel: RxScreenSupport {
+class SearchListViewModel: RxAlertSupport, RxScreenSupport, RxLoadingSupport {
+    var alert   = RxAlertSupportData()
     var screen  = RxScreenSupportData()
+    var loading = RxLoadingSupportData()
     
     public  let response     = BehaviorRelay<Response?>(value: nil)
     public  let listItems    = BehaviorRelay<[item]>(value: [])
@@ -83,9 +85,11 @@ extension SearchListViewModel {
     }
     
     private func getListItemsData() {
+        self.showLoading()
         KurlyAPI.shared.getSearchListInfo(param: param)
             .subscribe(onNext: { [weak self] data in
                 guard let `self` = self else { return }
+                self.hasNext = true
                 self.response.accept(data)
                 if let result = self.response.value?.items {
                     if result.count > 0 {
@@ -95,10 +99,14 @@ extension SearchListViewModel {
                         }
                         self.listItems.accept(combine)
                     }
+                    self.hideLoading()
                 }
             }, onError: { [weak self] error in
                 guard let `self` = self else { return }
                 self.hasNext = false
+                self.hideLoading()
+                self.showAlert(with: error.localizedDescription, retry: { [weak self] in
+                                self?.getListItemsData()}, cancel: true)
             }).disposed(by: disposeBag)
     }
 }

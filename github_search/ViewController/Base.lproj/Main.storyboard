@@ -223,7 +223,7 @@
                                                             </constraints>
                                                         </stackView>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="dXF-8k-005" firstAttribute="leading" secondItem="qyT-bn-7Wg" secondAttribute="leading" id="4UG-71-hi4"/>
                                                         <constraint firstAttribute="height" constant="26" id="lt0-SB-J04"/>
@@ -275,7 +275,7 @@
                                                             </constraints>
                                                         </stackView>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="qcB-EZ-80V" firstAttribute="leading" secondItem="jMV-T4-85F" secondAttribute="leading" id="m5i-dS-LJo"/>
                                                         <constraint firstItem="qcB-EZ-80V" firstAttribute="top" secondItem="jMV-T4-85F" secondAttribute="top" id="syK-ja-g9K"/>

@@ -13,7 +13,7 @@ import RxAppState
 let protocolClass = ProtocolClass.init()
 
 class ProtocolClass {
-    public var protocalWindow   : UIWindow!
+    public var classWindow   : UIWindow!
 }
 
 @objc protocol RxBindProtocol: AnyObject {
@@ -30,6 +30,31 @@ extension RxBindProtocol where Self: UIViewController {
     }
     
     func bind<T>(_ viewModel: T, bag: DisposeBag) {
+        
+        if let viewModel = viewModel as? RxLoadingSupport, let loading = self as? LoadingProtocol {
+         
+            viewModel.loading.show
+                .distinctUntilChanged()
+                .observeOn(MainScheduler.instance)
+                .bind{ show in
+                    if show {
+                        loading.showLoading()
+                    } else {
+                        loading.hideLoading()
+                    }
+                }.disposed(by: bag)
+        }
+        
+        if let viewModel = viewModel as? RxAlertSupport {
+            viewModel.alert.show
+                .asDriver()
+                .filterNil()
+                .drive(onNext: { [weak self] data in
+                    guard let `self` = self else { return }
+                    self.showAlert(title: data.title, message: data.message, buttons: data.buttons)                    
+                })
+                .disposed(by: bag)
+        }
         
         if let viewModel = viewModel as? RxScreenSupport {
 

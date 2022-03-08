@@ -10,7 +10,9 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class SearchListView : UIViewController {
+class SearchListView : UIViewController, LoadingProtocol {
+    
+    
 
     static var `default`: SearchListView {
         return UIStoryboard("Main").identifier("SearchList") as! SearchListView
@@ -19,6 +21,7 @@ class SearchListView : UIViewController {
     @IBOutlet public weak var tableView             : UITableView!
     @IBOutlet public weak var searchView            : UISearchBar!
     
+    var loading                 : LoadingViewController?
     private var refreshControl  : UIRefreshControl!
     private var viewModel       : SearchListViewModel!
     private var isReload        : Bool = false
