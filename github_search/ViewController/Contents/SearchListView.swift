@@ -85,7 +85,26 @@ class SearchListView : UIViewController, LoadingProtocol {
 
 // MARK: - RefreshControl
 extension SearchListView {
+    func searchTextError() {
+        let confirm = AlertButtonData.init(text: alert_confirm) {
+            self.searchView.becomeFirstResponder()
+        }
+
+        let alert = AlertData.init(message: text_length_error,
+                                   buttons: [confirm])
+
+        self.viewModel.showAlert(with: alert)
+    }
+
+}
+
+// MARK: - RefreshControl
+extension SearchListView {
     @objc func handleRefresh(_ refreshControl: AnyObject) {
+        if self.searchView.text!.count == 0 {
+            self.searchTextError()
+            return
+        }
         self.viewModel.reloadListItemsData()
     }
     
@@ -97,18 +116,22 @@ extension SearchListView {
 // MARK: - scrollView
 extension SearchListView {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-            let offsetY = scrollView.contentOffset.y
-            let contentHeight = scrollView.contentSize.height
-            let height = scrollView.frame.height
-            
-            
-            if offsetY > (contentHeight - height) {
-                if self.isReload && self.viewModel.hasNext {
-                    self.viewModel.nextListItemsData()
-                    self.isReload = false
-                }
+        let contentHeight = scrollView.contentSize.height
+        if contentHeight == 0 {
+            return
+        }
+        
+        let offsetY = scrollView.contentOffset.y
+        let height = scrollView.frame.height
+        
+        
+        if offsetY > (contentHeight - height) {
+            if self.isReload && self.viewModel.hasNext {
+                self.viewModel.nextListItemsData()
+                self.isReload = false
             }
         }
+    }
 }
 
 // MARK: - UITableViewDelegate
@@ -154,6 +177,12 @@ extension SearchListView : UITableViewDataSource {
 // MARK: - UISearchBarDelegate
 extension SearchListView : UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        if searchBar.text!.count == 0 {
+            self.searchTextError()
+            return
+        }
+        
         self.viewModel.getListItemsData(search: searchBar.text ?? "")
     }
 }

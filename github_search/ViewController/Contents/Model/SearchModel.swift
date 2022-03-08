@@ -8,6 +8,10 @@
 import Foundation
 import ObjectMapper
 
+
+let text_length_error : String = "검색어를 입력해주세요."
+let alert_confirm     : String = "확인"
+
 struct searchParam {
     var search     : String = "kurly"
     var page       : Int = 1
