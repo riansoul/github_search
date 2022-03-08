@@ -60,6 +60,21 @@ extension SearchListViewModel {
 // MARK: - API
 extension SearchListViewModel {
     
+    func nextListItemsData() {
+        if !hasNext {
+            return
+        }
+        
+        param.page += 1
+        self.getListItemsData()
+    }
+    
+    func reloadListItemsData() {
+        self.listItems.accept([])
+        self.param.page = 1
+        self.getListItemsData()
+    }
+    
     func getListItemsData(search:String) {
         self.listItems.accept([])
         self.param.search = search

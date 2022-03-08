@@ -19,8 +19,9 @@ class SearchListView : UIViewController {
     @IBOutlet public weak var tableView             : UITableView!
     @IBOutlet public weak var searchView            : UISearchBar!
     
+    private var refreshControl  : UIRefreshControl!
     private var viewModel       : SearchListViewModel!
-    
+    private var isReload        : Bool = false
     
     private let disposeBag = DisposeBag()
     
@@ -32,7 +33,13 @@ class SearchListView : UIViewController {
     }
     
     func initialize() {
-        self.viewModel = SearchListViewModel.init()        
+        self.viewModel = SearchListViewModel.init()
+        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.backgroundColor = UIColor.white
+        self.refreshControl.addTarget(self, action:#selector(handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        self.tableView.addSubview(self.refreshControl)
+        
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 80.0
     }
@@ -71,6 +78,34 @@ class SearchListView : UIViewController {
     override var prefersStatusBarHidden: Bool {
         return false
     }
+}
+
+// MARK: - RefreshControl
+extension SearchListView {
+    @objc func handleRefresh(_ refreshControl: AnyObject) {
+        self.viewModel.reloadListItemsData()
+    }
+    
+    @objc func endRefresh() {
+        self.refreshControl.endRefreshing()
+    }
+}
+
+// MARK: - scrollView
+extension SearchListView {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            let offsetY = scrollView.contentOffset.y
+            let contentHeight = scrollView.contentSize.height
+            let height = scrollView.frame.height
+            
+            
+            if offsetY > (contentHeight - height) {
+                if self.isReload && self.viewModel.hasNext {
+                    self.viewModel.nextListItemsData()
+                    self.isReload = false
+                }
+            }
+        }
 }
 
 // MARK: - UITableViewDelegate
@@ -137,6 +172,8 @@ extension SearchListView : RxBindProtocol {
             .debounce(0.2, scheduler: MainScheduler.instance)
             .bind(onNext: { data in
                 self.tableView.reloadData()
+                self.isReload = true
+                self.perform(#selector(self.endRefresh), with:nil, afterDelay: 0.3)
             })
             .disposed(by: disposeBag)
     }
