@@ -9,6 +9,14 @@ import Foundation
 import ObjectMapper
 
 
+let listCellId      : String = "ListItem"
+let TopicCellId     : String = "topicItemCell"
+
+let hexBlackColor   : String = "ffffff"
+let hexWhiteColor   : String = "ffffff"
+
+let keyColor        : String = "color"
+
 let textLengthError : String = "검색어를 입력해주세요."
 let alertConfirm     : String = "확인"
 

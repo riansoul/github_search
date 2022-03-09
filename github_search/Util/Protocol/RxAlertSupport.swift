@@ -29,19 +29,19 @@ extension RxAlertSupport {
         if let buttons = buttons {
             alert.show.accept(AlertData(message: message, buttons: buttons))
         } else {
-            let button = AlertButtonData(text: "확인")
+            let button = AlertButtonData(text: confirmButton)
             alert.show.accept(AlertData(message: message, buttons: [button]))
         }
     }
         
     func showAlert(with message: String, retry: (() -> Void)?, cancel: Bool = false) {
         if cancel {
-            let cancel = AlertButtonData(text: "취소", buttonType: .cancel)
-            let retry = AlertButtonData(text: "재시도", handler: retry)
+            let cancel = AlertButtonData(text: cancelButton, buttonType: .cancel)
+            let retry = AlertButtonData(text: retryButton, handler: retry)
             let alert = AlertData(message: message, buttons: [cancel, retry])
             showAlert(with: alert)
         } else {
-            let retry = AlertButtonData(text: "재시도", handler: retry)
+            let retry = AlertButtonData(text: retryButton, handler: retry)
             let alert = AlertData(message: message, buttons: [retry])
             showAlert(with: alert)
         }

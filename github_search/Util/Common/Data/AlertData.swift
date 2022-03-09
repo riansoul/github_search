@@ -13,7 +13,7 @@ struct AlertData {
     var message     : String
     var buttons     : [AlertButtonData]
     
-    init(title: String? = "Kurly Proj App", message: String, buttons: [AlertButtonData]) {
+    init(title: String? = alertTitle, message: String, buttons: [AlertButtonData]) {
         self.title = title
         self.message = message
         self.buttons = buttons        

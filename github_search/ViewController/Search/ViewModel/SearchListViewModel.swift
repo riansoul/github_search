@@ -53,12 +53,12 @@ extension SearchListViewModel {
     func getColor(language : String) -> UIColor {
         
         if let dic = languageColor[language] as? NSDictionary {
-            let hexString = dic["color"] as? String ?? "ffffff"
+            let hexString = dic[keyColor] as? String ?? hexBlackColor
             return UIColor.init(hexString: hexString)
         }
         
         
-        return UIColor.init(hexString: "000000")
+        return UIColor.init(hexString: hexWhiteColor)
     }    
 }
 

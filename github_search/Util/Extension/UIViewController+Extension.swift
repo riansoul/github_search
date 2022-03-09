@@ -16,7 +16,7 @@ var alertWindow: UIWindow!
 
 extension UIViewController {
         
-    func showAlert(title: String? = "Kurly Proj App", message: String, buttons: [AlertButtonData]) {
+    func showAlert(title: String? = alertTitle, message: String, buttons: [AlertButtonData]) {
         if let selfViewController = self as? UIAlertController, selfViewController.message == message, selfViewController.title == title {
             return
         }

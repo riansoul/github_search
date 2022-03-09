@@ -128,46 +128,13 @@ extension SearchWebView: WKUIDelegate {
     }
 
     public func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
-        
-//        let confirm = AlertButtonData(text: "확인") {
-//            completionHandler()
-//        }
-//        self.superVC.showAlert(message: message, buttons: [confirm])
     }
     
     
     public func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
-        
-//        let cancel = AlertButtonData(text: "취소".localized) {
-//            completionHandler(false)
-//        }
-//        let confirm = AlertButtonData(text: "확인".localized)  {
-//            completionHandler(true)
-//        }
-//        self.superVC.showAlert(message: message, buttons: [cancel, confirm])
     }
     
     public func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
-        
-//        let alert = UIAlertController(title: "밀리의서재", message: prompt, preferredStyle: .alert)
-//        alert.view.tintColor = UIColor.init(r: 146, g: 104, b: 187, a: 1)
-//        alert.addTextField(configurationHandler: { (textField) in
-//            textField.text          = defaultText ?? ""
-//        })
-//        
-//        let agreeAction = UIAlertAction(title: "확인", style: .default, handler: { [weak alert] (_) in
-//            let textField = alert?.textFields?[0]
-//            completionHandler(textField?.text)
-//        })
-//        
-//        let cancelAction = UIAlertAction(title: "취소", style: .cancel , handler: { (_) in
-//            completionHandler(nil)
-//        })
-//        
-//        alert.addAction(agreeAction)
-//        alert.addAction(cancelAction)
-//        
-//        self.superVC.present(alert, animated: true, completion: nil)
     }
 }
 

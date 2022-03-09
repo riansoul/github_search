@@ -8,6 +8,10 @@
 import Foundation
 
 
+let alertTitle       : String = "Kurly Proj App"
+let confirmButton    : String = "확인"
+let cancelButton     : String = "취소"
+let retryButton      : String = "재시도"
 let updateStr        : String = "Updated"
 
 let updateYear       : String = "\(updateStr)\(" On %@")"
