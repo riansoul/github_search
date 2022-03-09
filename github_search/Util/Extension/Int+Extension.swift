@@ -8,7 +8,7 @@
 import Foundation
 
 extension Int {
-    func count() -> String{
+    var count:String{
         let num = Double(self)
         let thousandNum = num/1000
         let millionNum = num/1000000
@@ -31,4 +31,12 @@ extension Int {
             return ("\(num)")
         }
     }
+    
+    var decimal:String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let formatterNumber = numberFormatter.string(from: NSNumber(value:self))
+        return formatterNumber ?? ""
+    }
+    
 }

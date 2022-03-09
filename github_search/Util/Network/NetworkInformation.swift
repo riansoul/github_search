@@ -17,11 +17,11 @@ struct ServerSetting {
         #endif
     }
     
-    private static var api_url: String {
+    private static var apiUrl: String {
         return "https://api.github.com/search/repositories"
     }
     
     public static var api: String {
-        return "\(ServerSetting.api_url)"
+        return "\(ServerSetting.apiUrl)"
     }
 }

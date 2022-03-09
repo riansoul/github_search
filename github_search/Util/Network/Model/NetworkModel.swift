@@ -8,27 +8,27 @@
 import Foundation
 
 protocol BaseResponse: Codable {
-    var total_count             : Int { get }
-    var incomplete_results      : Bool { get }
-    var items                   : [item] { get }
+    var count             : Int { get }
+    var results           : Bool { get }
+    var items             : [item] { get }
 }
 
 struct Response: BaseResponse {
-    private(set) var total_count        : Int
-    private(set) var incomplete_results : Bool
-    private(set) var items              : [item]
+    private(set) var count        : Int
+    private(set) var results      : Bool
+    private(set) var items        : [item]
     
     private enum CodingKeys: String, CodingKey {
-        case total_count = "count"
-        case incomplete_results = "results"
+        case count = "total_count"
+        case results = "incomplete_results"
         case items
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        total_count         = (try? container.decode(Int.self, forKey: .total_count)) ?? 0
-        incomplete_results  = (try? container.decode(Bool.self, forKey: .incomplete_results)) ?? false
-        items = (try? container.decode([item].self, forKey: .items)) ?? []
+        count    = (try? container.decode(Int.self, forKey: .count)) ?? 0
+        results  = (try? container.decode(Bool.self, forKey: .results)) ?? false
+        items    = (try? container.decode([item].self, forKey: .items)) ?? []
     }
 }
 
@@ -116,6 +116,8 @@ struct item: Codable {
     private(set) var privateFlag        : Bool?
     private(set) var description        : String?
     private(set) var updated_at         : String?
+    private(set) var pushed_at          : String?
+    
     private(set) var html_url           : String?
     private(set) var stargazers_count   : Int?
     private(set) var language           : String?
@@ -126,7 +128,7 @@ struct item: Codable {
         case id, node_id
         case name,full_name
         case privateFlag  = "private"
-        case description, updated_at
+        case description, updated_at, pushed_at
         case html_url, stargazers_count, language
         case topics, license
     }
@@ -140,6 +142,7 @@ struct item: Codable {
         privateFlag         = (try? container.decode(Bool.self, forKey: .privateFlag)) ?? false
         description         = (try? container.decode(String.self, forKey: .description)) ?? ""
         updated_at          = (try? container.decode(String.self, forKey: .updated_at)) ?? ""
+        pushed_at           = (try? container.decode(String.self, forKey: .pushed_at)) ?? ""
         html_url            = (try? container.decode(String.self, forKey: .html_url)) ?? ""
         stargazers_count    = (try? container.decode(Int.self, forKey: .stargazers_count)) ?? 0
         language            = (try? container.decode(String.self, forKey: .language)) ?? ""
