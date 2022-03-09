@@ -47,7 +47,7 @@ extension ListItemCell : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "topicItemCell", for: indexPath) as! TopicItemCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopicCellId, for: indexPath) as! TopicItemCell
         
         guard indexPath.row < self.topics.count else {
             return cell

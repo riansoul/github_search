@@ -163,13 +163,13 @@ extension SearchListView : UITableViewDataSource {
             return cell
         }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier:"ListItem", for:indexPath) as! ListItemCell
+        let cell = tableView.dequeueReusableCell(withIdentifier:listCellId, for:indexPath) as! ListItemCell
         
         cell.titleLabel.text = item.full_name
         cell.descLabel.text = item.description
         cell.starLabel.text = item.stargazers_count?.count
         cell.languageLabel.text = item.language
-        cell.languageImageView.backgroundColor = self.viewModel.getColor(language: item.language ?? "ffffff")
+        cell.languageImageView.backgroundColor = self.viewModel.getColor(language: item.language ?? hexWhiteColor)
         
         cell.topics = item.topics ?? []
         cell.topicsView.reloadData()
