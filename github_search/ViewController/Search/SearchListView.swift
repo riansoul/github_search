@@ -41,8 +41,7 @@ class SearchListView : UIViewController, LoadingProtocol {
         self.refreshControl = UIRefreshControl()
         self.refreshControl.backgroundColor = UIColor.white
         self.refreshControl.addTarget(self, action:#selector(handleRefresh(_:)), for: UIControlEvents.valueChanged)
-        self.tableView.addSubview(self.refreshControl)
-        self.refreshControl.isEnabled = false
+        self.tableView.refreshControl = self.refreshControl
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 80.0
     }
@@ -100,6 +99,7 @@ extension SearchListView {
 extension SearchListView {
     @objc func handleRefresh(_ refreshControl: AnyObject) {
         if self.searchView.text!.count == 0 {
+            self.perform(#selector(self.endRefresh), with:nil, afterDelay: 0.3)
             self.searchTextError()
             return
         }
@@ -114,11 +114,11 @@ extension SearchListView {
 // MARK: - scrollView
 extension SearchListView {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let contentHeight = scrollView.contentSize.height
-        if contentHeight == 0 {
+        if  self.viewModel.getTableRowCount() == 0 {
             return
         }
         
+        let contentHeight = scrollView.contentSize.height
         let offsetY = scrollView.contentOffset.y
         let height = scrollView.frame.height
         
@@ -195,7 +195,7 @@ extension SearchListView : UISearchBarDelegate {
             self.searchTextError()
             return
         }
-        
+        self.searchView.resignFirstResponder()
         self.viewModel.getListItemsData(search: searchBar.text ?? "")
     }
 }
@@ -217,7 +217,7 @@ extension SearchListView : RxBindProtocol {
             .debounce(0.2, scheduler: MainScheduler.instance)
             .bind(onNext: { data in
                 self.tableView.reloadData()
-                self.refreshControl.isEnabled = true
+                self.tableView.isScrollEnabled = true
                 self.headerView.settingCountLabel()
                 self.isReload = true
                 self.perform(#selector(self.endRefresh), with:nil, afterDelay: 0.3)

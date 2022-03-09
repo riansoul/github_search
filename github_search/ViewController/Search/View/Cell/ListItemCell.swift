@@ -11,7 +11,7 @@ class ListItemCell: UITableViewCell {
     @IBOutlet weak var titleLabel                : UILabel!
     @IBOutlet weak var descLabel                 : UILabel!
     
-    @IBOutlet weak var topicsView                : UICollectionView!
+    @IBOutlet weak var topicsView                : SearchCollectionView!
     @IBOutlet weak var topicsViewHeight          : NSLayoutConstraint!
     
     
@@ -37,10 +37,7 @@ class ListItemCell: UITableViewCell {
     }
     
     func setCollectionView() {
-        self.topicsViewHeight.constant = 1000.0
         self.topicsView.layoutIfNeeded()
-        self.topicsViewHeight.constant = self.topicsView.collectionViewLayout.collectionViewContentSize.height
-        self.layoutIfNeeded()
     }
 }
 

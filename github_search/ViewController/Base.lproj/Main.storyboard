@@ -79,14 +79,14 @@
                                     </connections>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListItem" rowHeight="250" id="Qez-ub-rMO" customClass="ListItemCell" customModule="github_search" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListItem" rowHeight="250" id="Qez-ub-rMO" customClass="ListItemCell" customModule="github_search" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="88.5" width="320" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qez-ub-rMO" id="cgm-vx-nBa">
+                                        <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qez-ub-rMO" id="cgm-vx-nBa">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="repository" translatesAutoresizingMaskIntoConstraints="NO" id="Dja-hh-DQq">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="repository" translatesAutoresizingMaskIntoConstraints="NO" id="Dja-hh-DQq">
                                                     <rect key="frame" x="16" y="16" width="16" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="glg-ch-l7v"/>
@@ -252,11 +252,11 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4VI-zm-46l">
                                                     <rect key="frame" x="40" y="65.5" width="264" height="117.5"/>
                                                     <subviews>
-                                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zBp-LG-pfd">
+                                                        <collectionView multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zBp-LG-pfd" customClass="SearchCollectionView" customModule="github_search" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="264" height="117.5"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="950" constant="30" id="yC5-Os-oDn"/>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="950" id="yC5-Os-oDn"/>
                                                             </constraints>
                                                             <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OM3-fO-8vI">
                                                                 <size key="itemSize" width="64" height="30"/>
@@ -265,15 +265,15 @@
                                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             </collectionViewFlowLayout>
                                                             <cells>
-                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="topicItemCell" id="IVI-pE-bd8" customClass="TopicItemCell" customModule="github_search" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="53.5" height="28"/>
+                                                                <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="topicItemCell" id="IVI-pE-bd8" customClass="TopicItemCell" customModule="github_search" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="45.5" height="28"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HoQ-fS-xho">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="53.5" height="28"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="45.5" height="28"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oR6-UX-VHV">
-                                                                                <rect key="frame" x="12" y="4" width="29.5" height="20"/>
+                                                                                <rect key="frame" x="8" y="4" width="29.5" height="20"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" priority="950" constant="20" id="PMW-KO-bt0"/>
@@ -281,19 +281,13 @@
                                                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                                                                 <color key="textColor" red="0.039215686274509803" green="0.41176470588235292" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
-                                                                                <userDefinedRuntimeAttributes>
-                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                                        <integer key="value" value="14"/>
-                                                                                    </userDefinedRuntimeAttribute>
-                                                                                </userDefinedRuntimeAttributes>
                                                                             </label>
                                                                         </subviews>
                                                                         <color key="backgroundColor" red="0.8666666666666667" green="0.95686274509803915" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
                                                                             <constraint firstItem="oR6-UX-VHV" firstAttribute="top" secondItem="HoQ-fS-xho" secondAttribute="top" constant="4" id="6hu-ZF-EKH"/>
-                                                                            <constraint firstAttribute="trailing" secondItem="oR6-UX-VHV" secondAttribute="trailing" constant="12" id="LSK-0w-EDk"/>
-                                                                            <constraint firstItem="oR6-UX-VHV" firstAttribute="leading" secondItem="HoQ-fS-xho" secondAttribute="leading" constant="12" id="MBc-J6-nsd"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="oR6-UX-VHV" secondAttribute="trailing" constant="8" id="LSK-0w-EDk"/>
+                                                                            <constraint firstItem="oR6-UX-VHV" firstAttribute="leading" secondItem="HoQ-fS-xho" secondAttribute="leading" constant="8" id="MBc-J6-nsd"/>
                                                                             <constraint firstAttribute="bottom" secondItem="oR6-UX-VHV" secondAttribute="bottom" constant="4" id="g5N-w9-IUE"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
