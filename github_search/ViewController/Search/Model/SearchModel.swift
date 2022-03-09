@@ -9,10 +9,10 @@ import Foundation
 import ObjectMapper
 
 
-let listCellId      : String = "ListItem"
+let listCellId      : String = "listItem"
 let TopicCellId     : String = "topicItemCell"
 
-let hexBlackColor   : String = "ffffff"
+let hexBlackColor   : String = "000000"
 let hexWhiteColor   : String = "ffffff"
 
 let keyColor        : String = "color"
